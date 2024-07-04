@@ -1,0 +1,365 @@
+:root {
+    --letras: #326595;
+    --botoes1: #0062be;
+    --botoes: #1e8a50;
+    --box: #d1eeff;
+    --body: #f3faff;
+}
+
+@font-face {
+    font-family: fonte_geral;
+    src: url(Kufam-Regular.ttf);
+}
+
+@font-face {
+    font-family: fonte_titulos;
+    src: url(KronaOne-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: fonte_geral;
+}
+
+.imagem {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('telaInicial.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 35%;
+    height: 20%;
+}
+
+.imagem_fundo {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('fundo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 35%;
+    height: 20%;
+}
+
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: var(--body);
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: var(--body);
+    padding: 10px;
+    text-align: center;
+    font-size: 35px;
+    color: var(--letras);
+}
+
+/* Estilos para o feedback */
+#feedback {
+    margin: 20px;
+    color: var(--letras);
+    font-weight: bold;
+}
+
+/* Estilo para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--letras)
+}
+
+/* Estilo para o conteúdo do modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* Centraliza o modal verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    /* Largura máxima do modal */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Estilo para o botão de fechar */
+.close {
+    color: var(--letras);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*footer*/
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--letras);
+    height: 30px;
+    width: 100%;
+    color: var(--box);
+    margin-top: auto;
+
+}
+
+footer a {
+    text-indent: 15px;
+    color: var(--box);
+    text-decoration: none;
+    font-size: 15px;
+    font-family: fonte_geral;
+    padding-top: 5px;
+}
+
+footer a:hover {
+    height: 62%;
+    margin: 0;
+    width: 100%;
+    opacity: 0.8;
+}
+
+
+/*fundo formulário*/
+
+.cadastro {
+    background-color: var(--body);
+    border-radius: 2.8rem;
+    padding: 1.8rem;
+    max-width: 50%;
+    margin: 0 auto;
+
+}
+
+#container {
+    width: 500px;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+
+/*fomulário*/
+.field {
+    padding: 12px;
+}
+
+input[type=text],
+[type=password],
+[type=number] {
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid var(--letras);
+    outline: none;
+    color: var(--letras);
+    line-height: 20px;
+    caret-color: var(--letras);
+
+}
+
+
+input[type=submit] {
+    display: block;
+    cursor: pointer;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+    color: var(--body);
+    text-indent: 0;
+    height: 30px;
+    background: linear-gradient(to right, var(--botoes1)50%, var(--botoes) 50%);
+
+}
+
+input[type=submit]:hover {
+    opacity: 0.8;
+}
+
+
+.custom-time-input {
+    border: 1px solid var(--letras);
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid var(--letras);
+    outline: none;
+    color: var(--letras);
+    line-height: 20px;
+    caret-color: var(--letras);
+}
+
+.custom-time-input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* Outros estilos existentes */
+
+.field.inputbox {
+    position: relative;
+}
+
+.field.inputbox input {
+    width: 50%;
+    padding: 10px;
+
+}
+
+.field.inputbox span {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s, font-size 0.3s, top 0.3s;
+    pointer-events: none;
+    color: var(--letras);
+    /* Adicione esta linha para mudar a cor do span */
+}
+
+.field.inputbox input:focus~span,
+.field.inputbox input:valid~span {
+    top: 0;
+    transform: translateY(-50%) translateX(-13px);
+    font-size: 1em;
+}
+
+/* Outros estilos existentes */
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    font-family: fonte_titulos;
+}
+
+.titulo {
+    padding: 10px;
+    margin-top: 3%;
+    margin-left: 3%;
+    line-height: 100%;
+    font-size: 3.2rem;
+    max-width: 50rem;
+    font-family: fonte_titulos;
+    text-align: start;
+}
+
+table {
+    text-align: center;
+}
+
+.btn {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 30px;
+    border: none;
+    color: var(--body);
+    background: linear-gradient(to right, var(--botoes1)50%, var(--botoes) 50%);
+    height: 50px;
+    display: inline-block;
+
+}
+
+.botoes {
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid var(--letras);
+    font-size: 15px;
+    height: 40px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+select option {
+    background-color: var(--body);
+    border: solid 1px var(--letras);
+    color: var(--letras);
+}
+
+/*Para tablets*/
+@media(max-width:1042px) and (min-width:768px) {
+    .btn {
+        width: 48rem;
+    }
+}
+
+/*Para celulares*/
+@media(max-width:767px) {
+    .app__telaInicio {
+        width: 5.8rem;
+
+    }
+
+    .titulo {
+        font-size: 2.1rem;
+        margin-top: 20%;
+        line-height: 95%;
+
+    }
+
+    .imagem {
+
+        width: 90%;
+    }
+
+    .btn {
+        margin-top: 70%;
+    }
+
+    .footer {
+        height: 60px;
+    }
+
+    .cadastro {
+        background-color: var(--body);
+        border-radius: 2.8rem;
+        padding: 1.8rem;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    #nomeMed {
+        width: 600px;
+    }
+    .table-responsive{
+        width: 90%;
+    }
+}
